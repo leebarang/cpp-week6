@@ -4,11 +4,33 @@
 #include <string>
 
 #define CACHE_SIZE 10
+// #define HASH_SIZE 20
+
+// 해시 클래스
+// class Hash {
+// public:
+//   // 해시 함수
+//   int hash(std::string key);
+// };
+
+// 연결 리스트
+typedef struct LinkedList {
+  std::string key;
+  enum ValueType { INT, DOUBLE }; // value의 타입을 저장하는 enum
+  ValueType type; // 저장된 타입 int or double
+  int intValue; // 찾고자 하는 값 int
+  double doubleValue; // 찾고자 하는 값 double
+  LinkedList* next; // 다음 노드의 위치
+  LinkedList() {};
+  LinkedList(std::string key, int value) : key(key), type(INT), intValue(value), next(nullptr) {};
+  LinkedList(std::string key, double value) : key(key), type(DOUBLE), doubleValue(value), next(nullptr) {};
+} LinkedList;
 
 class Cache {
 private:
-  // TODO: private inner struct/class 선언 가능
-  // TODO: private 멤버 변수와 함수 추가 가능
+  int size; // 현재 캐시 사이즈
+  LinkedList* head; // 헤드 포인트
+  // LinkedList* table[HASH_SIZE]; // 해시의 링크드 리스트 테이블
 
 public:
   Cache();
