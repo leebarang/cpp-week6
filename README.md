@@ -1,5 +1,6 @@
 # LRU Cache 프로그램
 이 프로그램은 데이터를 읽어오는 과정에서 수행하는 Cache 를 구현한 프로그램입니다.   
+(enhance 미구현)   
 사용자는 resources 파일을 통해 Cache가 정상 작동하는지 확인할 수 있습니다.  
 스켈레톤 코드 및 template은 https://github.com/cstria0106/cache-template.git 에서 확인할 수 있습니다.   
 @version 1.0.0
